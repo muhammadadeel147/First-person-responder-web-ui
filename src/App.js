@@ -7,7 +7,7 @@ import SignIn from './auth/Signin';
 function App() {
   return (
     <div className="App">
-      <SignUp/>
+      {/* <SignUp/> */}
       <SignIn/>
       <AppBar position="static">
         <Toolbar>
