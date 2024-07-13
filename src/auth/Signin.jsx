@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -14,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
-
+import { Link, useNavigate } from 'react-router-dom';
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,7 +39,7 @@ const SignIn = () => {
         md={7}
         sx={{
           backgroundImage:
-            'url("/static/images/templates/templates-images/sign-in-side-bg.png")',
+            'url("https://media.istockphoto.com/id/614123980/photo/medical-and-donor-concepts.jpg?s=612x612&w=0&k=20&c=R9r-gVefovFyISOHcxYr_qOpCn4wXqTCMk1ui74EvEo=")',
           backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
           backgroundSize: 'cover',
@@ -107,9 +106,10 @@ const SignIn = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+              <Link to="/signup" variant="body2">
+              Don't have an account? Sign Up
                 </Link>
+                
               </Grid>
             </Grid>
           
