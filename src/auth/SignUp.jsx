@@ -11,9 +11,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase'; // Ensure this path is correct
+import { auth } from '../firebase'; 
 import { Link, useNavigate } from 'react-router-dom';
-
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../firebase'; 
 const defaultTheme = createTheme();
 
 const SignUp = () => {
@@ -27,7 +28,13 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      await setDoc(doc(db, 'users', user.uid), {
+        firstName,
+        lastName,
+        email,
+      });
       navigate('/signin');
     } catch (error) {
       console.log(error);
@@ -35,6 +42,7 @@ const SignUp = () => {
     }
   };
 
+  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">

@@ -39,7 +39,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        {/* <Grid item xs={12} sm={6} md={4}>
           <Card>
             <CardContent>
               <Typography variant="h5" component="div">
@@ -53,7 +53,7 @@ const Dashboard = () => {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );

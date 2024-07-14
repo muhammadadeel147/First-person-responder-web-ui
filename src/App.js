@@ -6,10 +6,11 @@ import Home from './pages/Home';
 import Header from './utils/Header';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ManageAlerts from './pages/Dashboard/ManageAlerts';
+import ManageResponders from './pages/Dashboard/ManageResponders';
 
 function App() {
   const location = useLocation();
-  const hideHeaderPaths = ['/signin', '/signup','/dashboard'];
+  const hideHeaderPaths = ['/signin', '/signup','/dashboard','/manage-alerts','/manage-responders'];
   return (
     <div className="App">
  {!hideHeaderPaths.includes(location.pathname) && <Header />}
@@ -19,8 +20,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/manage-alerts" element={<ManageAlerts/>} />
-        <Route path="/manage-responders" element={<div>Manage Responders</div>} />
-        <Route path="/reports" element={<div>Reports</div>} />
+        <Route path="/manage-responders" element={<ManageResponders/>} />
+   
       </Routes>
   
     </div>
