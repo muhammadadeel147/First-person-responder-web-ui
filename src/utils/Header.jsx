@@ -22,11 +22,8 @@ function Header() {
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
                     First Responder Network
                 </Typography>
-                <Button color="inherit">Home</Button>
-                <Button color="inherit">About</Button>
-                <Button color="inherit">Services</Button>
-                <Button color="inherit">Contact</Button>
-                <Button color="inherit" variant="outlined" onClick={handleSignUpClick}>Sign Up</Button>
+
+                <Button color="inherit" variant="outlined" onClick={handleSignUpClick} sx={{marginRight:2}}>Sign Up</Button>
                 <Button color="inherit" variant="outlined" onClick={handleSignInClick}>Sign In</Button>
             </Toolbar>
         </AppBar>
