@@ -28,7 +28,6 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      // You can add additional user information to your database here
       navigate('/signin');
     } catch (error) {
       console.log(error);

@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import SignUp from './auth/SignUp';
 import SignIn from './auth/Signin';

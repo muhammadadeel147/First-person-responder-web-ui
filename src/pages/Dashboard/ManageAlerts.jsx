@@ -3,7 +3,7 @@ import { Container, Typography, Grid, Card, CardContent, Button, Dialog, DialogT
 import { Link } from 'react-router-dom';
 import AddAlertIcon from '@mui/icons-material/AddAlert';
 import { green, amber, red } from '@mui/material/colors';
-import { db } from '../../firebase'; // Adjust the path as per your project structure
+import { db } from '../../firebase'; 
 import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 
 const ManageAlerts = () => {
@@ -50,7 +50,6 @@ const ManageAlerts = () => {
   };
 
   const handleLocationClick = (location) => {
-    // Example link to Google Maps with location coordinates
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
   };
 
